@@ -20,6 +20,13 @@ W
   npm run build
 ```
 
+
+Run the application
+
+```bash
+  npm run start
+```
+
 # Env Variables
 
 POSTGRES_HOST=127.0.0.1 or localhost
@@ -53,26 +60,6 @@ npm install @types/node --save-dev
 
 npm install --save-dev @types/jasmine
 
-
-
-Run tests
-
-```bash
-  npm run test
-```
-
-
-Build the project
-
-```bash
-  npm run build
-```
-
-Run the application
-
-```bash
-  npm run start
-```
 
 
 ## Running Tests
