@@ -11,6 +11,15 @@ W
   npm install
 ```
 
+```bash
+  npm run db-up
+```
+
+
+```bash
+  npm run build
+```
+
 # Env Variables
 
 POSTGRES_HOST=127.0.0.1 or localhost
