@@ -66,13 +66,6 @@ Run the application
 ```
 
 
-
-Start the dev server
-
-```bash
-  npm start
-```
-
 ## Running Tests
 
 To run tests, run the following command
