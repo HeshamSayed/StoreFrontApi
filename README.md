@@ -14,6 +14,40 @@ W
 ```
 
 
+# Create database 
+
+- application database
+
+sudo su - postgres
+
+psql
+
+CREATE USER hesham WITH PASSWORD 'password';
+
+CREATE DATABASE store;
+
+postgres=# \c store
+You are now connected to database "store" as user "postgres".
+store=# GRANT ALL PRIVILEGES ON DATABASE store TO hesham;
+GRANT
+
+- testing database
+
+
+sudo su - postgres
+
+psql
+
+
+CREATE DATABASE store_test;
+
+postgres=# \c store_test
+You are now connected to database "store" as user "postgres".
+store_test=# GRANT ALL PRIVILEGES ON DATABASE store_test TO hesham;
+GRANT
+
+
+
 # Env Variables
 add a .env file in the root directory and set the missing ### environment parameters
 
