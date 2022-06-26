@@ -3,31 +3,19 @@
 Welcome to StoreFront backend repo please follow the below instruction to make the project up and running 
 W
 
-#### to install the dependencies
 
-- clone the project then write npm install to install the needed packages
 
-```bash
-  npm install
-```
+#### Project setup
+
+- clone the project
 
 ```bash
-  npm run db-up
+  https://github.com/HeshamSayed/StoreFrontApi.git
 ```
 
-
-```bash
-  npm run build
-```
-
-
-Run the application
-
-```bash
-  npm run start
-```
 
 # Env Variables
+add a .env file in the root directory and set the missing ### environment parameters
 
 POSTGRES_HOST=127.0.0.1 or localhost
 POSTGRES_PORT=5432
@@ -40,31 +28,56 @@ SALT_ROUNDS=10
 TOKEN_SECRET=here is the secret token
 
 
-## Packages samples
+```bash
+  npm install to install the dependencies
+```
 
-install the following packages
+```bash
+  npm run db-up to set up the database and get access via http://127.0.0.1:5432
+```
 
-npm install dotenv // to be use to read env vars
 
-npm install express // create express server
+```bash
+  npm run build to build the app
+```
 
-npm install prettier
 
-npm install express-validator
+# Start the app
 
-npm i --save-dev @types/mocha
+```bash
+  npm run start to start the app and get access via http://127.0.0.1:3000
+```
 
-npm i --save-dev @types/mocha
 
-npm install @types/node --save-dev
 
-npm install --save-dev @types/jasmine
+# Test the app
 
+check database.json and you will find "test" database for testing the app
+
+
+   {
+        "dev": {
+        "driver": "pg",
+        "host": "localhost",
+        "port": 5432,
+        "database": "store",
+        "user": "hesham",
+        "password": "password"
+        },
+        "test": {
+        "driver": "pg",
+        "host": "localhost",
+        "port": 5432,
+        "database": "store_test",
+        "user": "hesham",
+        "password": "password"
+        }
+    }
 
 
 ## Running Tests
 
-To run tests, run the following command
+To run all tests, run the following command
 
 ```bash
   npm run test
