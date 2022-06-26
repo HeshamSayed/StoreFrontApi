@@ -28,24 +28,32 @@ SALT_ROUNDS=10
 TOKEN_SECRET=here is the secret token
 
 
+to install the dependencies
+
 ```bash
-  npm install to install the dependencies
+  npm install 
 ```
 
+to set up the database and get access via http://127.0.0.1:5432
+
 ```bash
-  npm run db-up to set up the database and get access via http://127.0.0.1:5432
+  npm run db-up 
 ```
 
 
+to build the app
+
 ```bash
-  npm run build to build the app
+  npm run build 
 ```
 
 
 # Start the app
 
+to start the app and get access via http://127.0.0.1:3000
+
 ```bash
-  npm run start to start the app and get access via http://127.0.0.1:3000
+  npm run start 
 ```
 
 
