@@ -23,3 +23,34 @@
 - Read `/orders/:id` [GET] [token required]
 - Update `/orders/:id` [PUT] [token required]
 - Delete `/orders/:id` [DELETE] [token required]
+
+
+# Data types
+- Product
+- Table: products
+
+    - id SERIAL PRIMARY KEY
+    - name VARCHAR
+    - price INTEGER
+
+- User
+    - Table: users
+
+    - id SERIAL PRIMARY KEY
+    - username VARCHAR
+    - firstname VARCHAR
+    - lastname VARCHAR
+    - password_digest VARCHAR
+
+
+- Orders
+- Table: orders
+
+    - id SERIAL PRIMARY KEY
+    - user_id INTEGER REFERENCES users(id)
+    - status BOOLEAN
+    - Table: order_products
+
+    - order_id INTEGER REFERENCES orders(id)
+    - product_id INTEGER REFERENCES products(id)
+    - quantity INTEGER
