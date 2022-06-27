@@ -45,7 +45,7 @@ const read = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const id = req.params.id;
         if (id === undefined) {
             res.status(400);
-            res.send("Missing required parameter :id.");
+            res.send("request is invalid");
             return false;
         }
         const order = yield OrderStoreInstance.read(id);
@@ -64,7 +64,7 @@ const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const user_id = req.body.user_id;
         if (products === undefined || status === undefined || user_id === undefined || id === undefined) {
             res.status(400);
-            res.send("Some required parameters are missing! eg. :products, :status, :user_id, :id");
+            res.send("request is invalid");
             return false;
         }
         const order = yield OrderStoreInstance.update(id, { products, status, user_id });
@@ -80,11 +80,11 @@ const deleteOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const id = req.params.id;
         if (id === undefined) {
             res.status(400);
-            res.send("Missing required parameter :id.");
+            res.send("request is invalid");
             return false;
         }
         yield OrderStoreInstance.deleteOrder(id);
-        res.send(`Order with id ${id} successfully deleted.`);
+        res.send(`Order with id ${id} deleted successfully .`);
     }
     catch (e) {
         res.status(400);

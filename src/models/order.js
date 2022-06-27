@@ -31,7 +31,7 @@ class OrderStore {
                 return orders;
             }
             catch (err) {
-                throw new Error(`Could not get orders. ${err}`);
+                throw new Error(`failed to to get orders. ${err}`);
             }
         });
     }
@@ -54,7 +54,7 @@ class OrderStore {
                 return Object.assign(Object.assign({}, order), { products: orderProducts });
             }
             catch (err) {
-                throw new Error(`Could not add new order for user ${user_id}. ${err}`);
+                throw new Error(`failed to to add new order for user ${user_id}. ${err}`);
             }
         });
     }
@@ -71,7 +71,7 @@ class OrderStore {
                 return Object.assign(Object.assign({}, order), { products: orderProductRows });
             }
             catch (err) {
-                throw new Error(`Could not find order ${id}. ${err}`);
+                throw new Error(`failed to to find order ${id}. ${err}`);
             }
         });
     }
@@ -94,7 +94,7 @@ class OrderStore {
                 return Object.assign(Object.assign({}, order), { products: orderProducts });
             }
             catch (err) {
-                throw new Error(`Could not update order for user ${user_id}. ${err}`);
+                throw new Error(`failed to to update order for user ${user_id}. ${err}`);
             }
         });
     }
@@ -111,7 +111,7 @@ class OrderStore {
                 return order;
             }
             catch (err) {
-                throw new Error(`Could not delete order ${id}. ${err}`);
+                throw new Error(`failed to to delete order ${id}. ${err}`);
             }
         });
     }

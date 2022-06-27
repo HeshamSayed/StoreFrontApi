@@ -53,16 +53,16 @@ describe("Order Model", () => {
         yield UserStoreInstance.deleteUser(user_id);
         yield ProductStoreInstance.deleteProduct(product_id);
     }));
-    it("should have an index method", () => {
+    it("index method", () => {
         expect(OrderStoreInstance.index).toBeDefined();
     });
-    it("should have a show method", () => {
+    it("show method", () => {
         expect(OrderStoreInstance.read).toBeDefined();
     });
-    it("should have a add method", () => {
+    it("add method", () => {
         expect(OrderStoreInstance.create).toBeDefined();
     });
-    it("should have a delete method", () => {
+    it("delete method", () => {
         expect(OrderStoreInstance.deleteOrder).toBeDefined();
     });
     it("add method should add a order", () => __awaiter(void 0, void 0, void 0, function* () {

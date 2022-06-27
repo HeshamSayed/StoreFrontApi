@@ -13,7 +13,7 @@ exports.getTokenByUser = getTokenByUser;
 function checkAuthHeader(req, res, next) {
     if (!req.headers.authorization) {
         res.status(401);
-        res.json("Access denied, invalid token");
+        res.json("please check your credentials and try again");
         return false;
     }
     try {
@@ -24,7 +24,7 @@ function checkAuthHeader(req, res, next) {
     catch (err) {
         console.error(err);
         res.status(401);
-        res.json("Access denied, invalid token");
+        res.json("please check your credentials and try again");
         return false;
     }
 }

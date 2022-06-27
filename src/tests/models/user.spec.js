@@ -31,13 +31,13 @@ describe("User Model", () => {
     it("should have an index method", () => {
         expect(UserStoreInstance.index).toBeDefined();
     });
-    it("should have a show method", () => {
+    it("show method", () => {
         expect(UserStoreInstance.read).toBeDefined();
     });
-    it("should have a create method", () => {
+    it("create method", () => {
         expect(UserStoreInstance.create).toBeDefined();
     });
-    it("should have a remove method", () => {
+    it("remove method", () => {
         expect(UserStoreInstance.deleteUser).toBeDefined();
     });
     it("create method should create a user", () => __awaiter(void 0, void 0, void 0, function* () {

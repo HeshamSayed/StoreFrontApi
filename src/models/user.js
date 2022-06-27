@@ -27,7 +27,7 @@ class UserStore {
                 return rows;
             }
             catch (err) {
-                throw new Error(`Could not get users. ${err}`);
+                throw new Error(`failed to get users. ${err}`);
             }
         });
     }
@@ -43,7 +43,7 @@ class UserStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not add new user ${firstname} ${lastname}. ${err}`);
+                throw new Error(`failed to add new user ${firstname} ${lastname}. ${err}`);
             }
         });
     }
@@ -57,7 +57,7 @@ class UserStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not find user ${id}. ${err}`);
+                throw new Error(`failed to find user ${id}. ${err}`);
             }
         });
     }
@@ -72,7 +72,7 @@ class UserStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not update user ${firstname} ${lastname}. ${err}`);
+                throw new Error(`failed to update user ${firstname} ${lastname}. ${err}`);
             }
         });
     }
@@ -86,7 +86,7 @@ class UserStore {
                 return true;
             }
             catch (err) {
-                throw new Error(`Could not delete user ${id}. ${err}`);
+                throw new Error(`failed to delete user ${id}. ${err}`);
             }
         });
     }
@@ -106,7 +106,7 @@ class UserStore {
                 return null;
             }
             catch (err) {
-                throw new Error(`Could not find user ${username}. ${err}`);
+                throw new Error(`failed to find user ${username}. ${err}`);
             }
         });
     }

@@ -27,8 +27,8 @@ describe("Order Handler", () => {
             password: "password123"
         };
         const productData = {
-            name: "CodeMaster 199",
-            price: 199
+            name: "Node",
+            price: 101
         };
         const { body: userBody } = yield request.post("/users/create").send(userData);
         token = userBody;
@@ -50,7 +50,7 @@ describe("Order Handler", () => {
         yield request.delete(`/users/${user_id}`).set("Authorization", "bearer " + token);
         yield request.delete(`/products/${product_id}`).set("Authorization", "bearer " + token);
     }));
-    it("gets the create endpoint", (done) => {
+    it("create endpoint", (done) => {
         request
             .post("/orders/create")
             .send(order)
@@ -62,7 +62,7 @@ describe("Order Handler", () => {
             done();
         });
     });
-    it("gets the index endpoint", (done) => {
+    it("index endpoint", (done) => {
         request
             .get("/orders")
             .set("Authorization", "bearer " + token)
@@ -71,7 +71,7 @@ describe("Order Handler", () => {
             done();
         });
     });
-    it("gets the read endpoint", (done) => {
+    it("read endpoint", (done) => {
         request
             .get(`/orders/${order_id}`)
             .set("Authorization", "bearer " + token)
@@ -80,7 +80,7 @@ describe("Order Handler", () => {
             done();
         });
     });
-    it("gets the update endpoint", (done) => {
+    it("update endpoint", (done) => {
         const newOrder = Object.assign(Object.assign({}, order), { status: false });
         request
             .put(`/orders/${order_id}`)
@@ -91,7 +91,7 @@ describe("Order Handler", () => {
             done();
         });
     });
-    it("gets the delete endpoint", (done) => {
+    it("delete endpoint", (done) => {
         request.delete(`/orders/${order_id}`).set("Authorization", "bearer " + token)
             .then((res) => {
             expect(res.status).toBe(200);

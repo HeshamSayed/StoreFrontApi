@@ -46,7 +46,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the create endpoint", (done) => {
+    it("create endpoint", (done) => {
         request
             .post("/users/create")
             .send(userData)
@@ -60,7 +60,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the index endpoint", (done) => {
+    it("index endpoint", (done) => {
         request
             .get("/users")
             .set("Authorization", "bearer " + token)
@@ -69,7 +69,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the read endpoint", (done) => {
+    it("read endpoint", (done) => {
         request
             .get(`/users/${userId}`)
             .set("Authorization", "bearer " + token)
@@ -78,7 +78,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the update endpoint", (done) => {
+    it("update endpoint", (done) => {
         const newUserData = Object.assign(Object.assign({}, userData), { firstname: "hesham", lastname: "sayed" });
         request
             .put(`/users/${userId}`)
@@ -89,7 +89,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the auth endpoint", (done) => {
+    it("auth endpoint", (done) => {
         request
             .post("/users/auth")
             .send({
@@ -102,7 +102,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the auth endpoint with wrong password", (done) => {
+    it("auth endpoint with wrong password", (done) => {
         request
             .post("/users/auth")
             .send({
@@ -115,7 +115,7 @@ describe("User Handler", () => {
             done();
         });
     });
-    it("gets the delete endpoint", (done) => {
+    it("delete endpoint", (done) => {
         request
             .delete(`/users/${userId}`)
             .set("Authorization", "bearer " + token)

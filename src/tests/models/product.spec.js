@@ -26,16 +26,16 @@ describe("Product Model", () => {
             return ProductStoreInstance.deleteProduct(id);
         });
     }
-    it("should have an index method", () => {
+    it("index method", () => {
         expect(ProductStoreInstance.index).toBeDefined();
     });
-    it("should have a show method", () => {
+    it("show method", () => {
         expect(ProductStoreInstance.read).toBeDefined();
     });
-    it("should have a add method", () => {
+    it("add method", () => {
         expect(ProductStoreInstance.create).toBeDefined();
     });
-    it("should have a delete method", () => {
+    it("delete method", () => {
         expect(ProductStoreInstance.deleteProduct).toBeDefined();
     });
     it("add method should add a product", () => __awaiter(void 0, void 0, void 0, function* () {

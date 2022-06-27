@@ -25,7 +25,7 @@ class ProductStore {
                 return rows;
             }
             catch (err) {
-                throw new Error(`Could not get products. ${err}`);
+                throw new Error(`failed to get products. ${err}`);
             }
         });
     }
@@ -40,7 +40,7 @@ class ProductStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not add new product ${name}. ${err}`);
+                throw new Error(`failed to add new product ${name}. ${err}`);
             }
         });
     }
@@ -54,7 +54,7 @@ class ProductStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not find product ${id}. ${err}`);
+                throw new Error(`failed to find product ${id}. ${err}`);
             }
         });
     }
@@ -69,7 +69,7 @@ class ProductStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not update product ${name}. ${err}`);
+                throw new Error(`failed to update product ${name}. ${err}`);
             }
         });
     }
@@ -83,7 +83,7 @@ class ProductStore {
                 return rows[0];
             }
             catch (err) {
-                throw new Error(`Could not delete product ${id}. ${err}`);
+                throw new Error(`failed to delete product ${id}. ${err}`);
             }
         });
     }

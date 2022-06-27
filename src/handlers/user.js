@@ -30,7 +30,7 @@ const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const password = req.body.password;
         if (firstname === undefined || lastname === undefined || username === undefined || password === undefined) {
             res.status(400);
-            res.send("Some required parameters are missing! eg. :firstname, :lastname, :username, :password");
+            res.send("request is invalid");
             return false;
         }
         const user = yield UserStoreInstance.create({ firstname, lastname, username, password });
@@ -46,7 +46,7 @@ const read = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const id = req.params.id;
         if (id === undefined) {
             res.status(400);
-            res.send("Missing required parameter :id.");
+            res.send("request is invalid");
             return false;
         }
         const user = yield UserStoreInstance.read(id);
@@ -64,7 +64,7 @@ const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const lastname = req.body.lastname;
         if (firstname === undefined || lastname === undefined || id === undefined) {
             res.status(400);
-            res.send("Some required parameters are missing! eg. :firstname, :lastname, :id");
+            res.send("request is invalid");
             return false;
         }
         const user = yield UserStoreInstance.update(id, { firstname, lastname });
@@ -80,11 +80,11 @@ const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const id = req.params.id;
         if (id === undefined) {
             res.status(400);
-            res.send("Missing required parameter :id.");
+            res.send("request is invalid");
             return false;
         }
         yield UserStoreInstance.deleteUser(id);
-        res.send(`User with id ${id} successfully deleted.`);
+        res.send(`User with id ${id} deleted successfully .`);
     }
     catch (e) {
         res.status(400);
@@ -97,13 +97,13 @@ const authenticate = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const password = req.body.password;
         if (username === undefined || password === undefined) {
             res.status(400);
-            res.send("Some required parameters are missing! eg. :username, :password");
+            res.send("request is invalid");
             return false;
         }
         const user = yield UserStoreInstance.authenticate(username, password);
         if (user === null) {
             res.status(401);
-            res.send(`Wrong password for user ${username}.`);
+            res.send(`Wrong credentials for user ${username}.`);
             return false;
         }
         res.json((0, helpers_1.getTokenByUser)(user));

@@ -19,8 +19,8 @@ const request = (0, supertest_1.default)(server_1.default);
 const SECRET = process.env.TOKEN_SECRET;
 describe("Product Handler", () => {
     const product = {
-        name: "CodeMaster 3000",
-        price: 999
+        name: "Python",
+        price: 99
     };
     let token, userId, productId;
     beforeAll(() => __awaiter(void 0, void 0, void 0, function* () {
@@ -39,7 +39,7 @@ describe("Product Handler", () => {
     afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
         yield request.delete(`/users/${userId}`).set("Authorization", "bearer " + token);
     }));
-    it("gets the create endpoint", (done) => {
+    it("create endpoint", (done) => {
         request
             .post("/products/create")
             .send(product)
@@ -51,7 +51,7 @@ describe("Product Handler", () => {
             done();
         });
     });
-    it("gets the index endpoint", (done) => {
+    it("index endpoint", (done) => {
         request
             .get("/products")
             .then((res) => {
@@ -59,7 +59,7 @@ describe("Product Handler", () => {
             done();
         });
     });
-    it("gets the read endpoint", (done) => {
+    it("read endpoint", (done) => {
         request
             .get(`/products/${productId}`)
             .then((res) => {
@@ -67,7 +67,7 @@ describe("Product Handler", () => {
             done();
         });
     });
-    it("gets the update endpoint", (done) => {
+    it("update endpoint", (done) => {
         const newProductData = Object.assign(Object.assign({}, product), { name: "CodeMerge 156 A", price: 1299 });
         request
             .put(`/products/${productId}`)
@@ -78,7 +78,7 @@ describe("Product Handler", () => {
             done();
         });
     });
-    it("gets the delete endpoint", (done) => {
+    it("delete endpoint", (done) => {
         request.delete(`/products/${productId}`).set("Authorization", "bearer " + token)
             .then((res) => {
             expect(res.status).toBe(200);

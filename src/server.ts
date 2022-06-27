@@ -18,7 +18,7 @@ const address: string = `127.0.0.1:${port}`
 
 app.use(bodyParser.json())
 
-userRoutes(app)
+userRoutes(app) 
 productRoutes(app)
 orderRoutes(app)
 

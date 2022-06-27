@@ -14,14 +14,14 @@ describe("Order Handler", () => {
 
   beforeAll(async () => {
     const userData: BaseAuthUser = {
-      username: "heshamsayed",
-      firstname: "hesham",
-      lastname: "sayed",
+      username: "ordertester",
+      firstname: "Order",
+      lastname: "Tester",
       password: "password123"
     }
     const productData: BaseProduct = {
-      name: "Node",
-      price: 101
+      name: "CodeMaster 199",
+      price: 199
     }
 
     const {body: userBody} = await request.post("/users/create").send(userData)
@@ -50,7 +50,7 @@ describe("Order Handler", () => {
     await request.delete(`/products/${product_id}`).set("Authorization", "bearer " + token)
   })
 
-  it("create endpoint", (done) => {
+  it("gets the create endpoint", (done) => {
     request
     .post("/orders/create")
     .send(order)
@@ -66,7 +66,7 @@ describe("Order Handler", () => {
     })
   })
 
-  it("index endpoint", (done) => {
+  it("gets the index endpoint", (done) => {
     request
     .get("/orders")
     .set("Authorization", "bearer " + token)
@@ -76,7 +76,7 @@ describe("Order Handler", () => {
     })
   })
 
-  it("read endpoint", (done) => {
+  it("gets the read endpoint", (done) => {
     request
     .get(`/orders/${order_id}`)
     .set("Authorization", "bearer " + token)
@@ -86,7 +86,7 @@ describe("Order Handler", () => {
     })
   })
 
-  it("update endpoint", (done) => {
+  it("gets the update endpoint", (done) => {
     const newOrder: BaseOrder = {
       ...order,
       status: false
@@ -102,7 +102,7 @@ describe("Order Handler", () => {
     })
   })
 
-  it("delete endpoint", (done) => {
+  it("gets the delete endpoint", (done) => {
     request.delete(`/orders/${order_id}`).set("Authorization", "bearer " + token)
     .then((res) => {
       expect(res.status).toBe(200)
