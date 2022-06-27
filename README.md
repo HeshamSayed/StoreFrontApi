@@ -60,6 +60,8 @@ POSTGRES_PASSWORD=password
 BCRYPT_PASSWORD=here is BCRYPT password
 SALT_ROUNDS=10
 TOKEN_SECRET=here is the secret token
+ENV=dev "if equal dev it will run the app" if test it will run the test so you have to change between them to test and run the app
+
 
 
 to install the dependencies
